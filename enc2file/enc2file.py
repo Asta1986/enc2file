@@ -18,7 +18,7 @@ class Enc2File:
         self._key_ = key
         self.fernet = Fernet(key)
 
-    def get_enconding(self):
+    def get_encoding(self):
         return self.encoding
 
     def set_encoding(self, encoding):
