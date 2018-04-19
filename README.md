@@ -42,3 +42,6 @@ UTF-8 is used by default.
     enc.key_from_file('/dir/key.file')
     decypted_string = enc.decrypt_from_file('/dir/msg.file')
     print(decypted_string)
+
+
+On the command line 'enc2file --help' can be used to see the available terminal commands.
