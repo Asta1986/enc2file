@@ -2,7 +2,7 @@
 
 ----
 #### What is Enc2File?
-Small module to easily encrypt and decrypt strings from stdin and files using using cryptography's Fernet recipe.
+Small module to easily encrypt and decrypt strings from stdin and files using cryptography's Fernet recipe.
 
 Check [cryptography docs](https://cryptography.io/en/latest/fernet/#) for details on the ecryption used.
 
