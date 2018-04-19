@@ -17,7 +17,7 @@ def cli():
 @click.command()
 def gen_key():
     """Generates an encryption key to use with enc2file commands."""
-    click.echo(Enc2File().token2str(Enc2File().get_encryption_key()))
+    click.echo(Enc2File().get_encryption_key())
 
 
 # Auxiliary functions to check the options set.
@@ -71,7 +71,7 @@ def decrypt(key, key_file, src_file, encoding, message):
     validate_key(key, key_file)
     validate_src(src_file, message)
     if src_file is None:
-        click.echo(ef.decrypt(ef.str2token(message)))
+        click.echo(ef.decrypt(message))
     else:
         click.echo(ef.decrypt_from_file(src_file))
 
