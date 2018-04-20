@@ -14,7 +14,7 @@ def cli():
     pass
 
 
-@click.command()
+@cli.command()
 def gen_key():
     """Generates an encryption key to use with enc2file commands."""
     click.echo(Enc2File().get_encryption_key())
@@ -43,7 +43,7 @@ def validate_src(src_file, message):
 #
 
 
-@click.command()
+@cli.command()
 @click.option('--key', help=hk)
 @click.option('--key_file', help=hkf, type=click.Path())
 @click.option('--dest_file', help='Path to the file where the encrypted message will be stored.', type=click.Path())
@@ -59,7 +59,7 @@ def encrypt(key, key_file, dest_file, encoding, message):
         ef.enc2file(message, dest_file)
 
 
-@click.command()
+@cli.command()
 @click.option('--key', help=hk)
 @click.option('--key_file', help=hkf, type=click.Path())
 @click.option('--src_file', help='Path to the file where the encrypted message will be read from.', type=click.Path())
@@ -74,8 +74,3 @@ def decrypt(key, key_file, src_file, encoding, message):
         click.echo(ef.decrypt(message))
     else:
         click.echo(ef.decrypt_from_file(src_file))
-
-
-cli.add_command(gen_key)
-cli.add_command(encrypt)
-cli.add_command(decrypt)
