@@ -7,6 +7,9 @@ hk = 'Encryption key to use.'
 hkf = 'Path to the file with the encryption key to use.'
 he = 'Encoding to use. Default is UTF-8.'
 de = 'utf-8'
+optk = '--key'
+optkf = '--key_file'
+optenc = '--encoding'
 
 
 @click.group()
@@ -44,10 +47,10 @@ def validate_src(src_file, message):
 
 
 @cli.command()
-@click.option('--key', help=hk)
-@click.option('--key_file', help=hkf, type=click.Path())
+@click.option(optk, help=hk)
+@click.option(optkf, help=hkf, type=click.Path())
 @click.option('--dest_file', help='Path to the file where the encrypted message will be stored.', type=click.Path())
-@click.option('--encoding', default=de, help=he)
+@click.option(optenc, default=de, help=he)
 @click.argument('message')
 def encrypt(key, key_file, dest_file, encoding, message):
     """Encrypts received MESSAGE using the specified key and stores it in a file or prints it to stdout."""
@@ -60,10 +63,10 @@ def encrypt(key, key_file, dest_file, encoding, message):
 
 
 @cli.command()
-@click.option('--key', help=hk)
-@click.option('--key_file', help=hkf, type=click.Path())
+@click.option(optk, help=hk)
+@click.option(optkf, help=hkf, type=click.Path())
 @click.option('--src_file', help='Path to the file where the encrypted message will be read from.', type=click.Path())
-@click.option('--encoding', default=de, help=he)
+@click.option(optenc, default=de, help=he)
 @click.option('--message', help='Encrypted text to decrypt.')
 def decrypt(key, key_file, src_file, encoding, message):
     """Decrypts MESSAGE using the specified key and prints it to stdout."""
