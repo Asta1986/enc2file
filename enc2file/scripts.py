@@ -35,14 +35,14 @@ def gen_enc2file(key, key_file, encoding):
 
 def validate_key(key, key_file):
     if key is None and key_file is None:
-        raise click.UsageError('No key specified.')
+        raise click.BadOptionUsage('No key specified.')
     elif key is not None and key_file is not None:
-        raise click.UsageError('Only one key source can be used at once.')
+        raise click.BadOptionUsage('Only one key source can be used at once.')
 
 
 def validate_src(src_file, message):
     if src_file is None and message is None:
-        raise click.UsageError('No text to decrypt given.')
+        raise click.BadOptionUsage('No text to decrypt given.')
 #
 
 
