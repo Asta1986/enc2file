@@ -49,7 +49,8 @@ def validate_src(src_file, message):
 @cli.command()
 @click.option(optk, help=hk)
 @click.option(optkf, help=hkf, type=click.Path())
-@click.option('--dest_file', help='Path to the file where the encrypted message will be stored.', type=click.Path())
+@click.option('--dest_file', help='Path to the file where the encrypted message will be stored.',
+              type=click.Path(dir_okay=False))
 @click.option(optenc, default=de, help=he)
 @click.argument('message')
 def encrypt(key, key_file, dest_file, encoding, message):
@@ -65,7 +66,8 @@ def encrypt(key, key_file, dest_file, encoding, message):
 @cli.command()
 @click.option(optk, help=hk)
 @click.option(optkf, help=hkf, type=click.Path())
-@click.option('--src_file', help='Path to the file where the encrypted message will be read from.', type=click.Path())
+@click.option('--src_file', help='Path to the file where the encrypted message will be read from.',
+              type=click.Path(dir_okay=False))
 @click.option(optenc, default=de, help=he)
 @click.option('--message', help='Encrypted text to decrypt.')
 def decrypt(key, key_file, src_file, encoding, message):
