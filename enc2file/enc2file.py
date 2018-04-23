@@ -5,13 +5,13 @@ from cryptography.fernet import Fernet
 class Enc2File:
 
     def __init__(self, key=None, encoding='utf-8'):
+        self.encoding = encoding
         if key is None:
             key = Fernet.generate_key()
         else:
             key = self.str2token(key)
         self._key_ = key
         self.fernet = Fernet(key)
-        self.encoding = encoding
 
     def get_encryption_key(self):
         return self.token2str(self._key_)

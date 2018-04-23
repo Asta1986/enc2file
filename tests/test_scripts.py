@@ -12,7 +12,7 @@ class TestScripts(unittest.TestCase):
 
     def test_gen_key(self):
         result = self.runner.invoke(scripts.gen_key)
-        # self.assertIsInstance(Enc2File(key=result.output), Enc2File)
+        self.assertIsInstance(Enc2File(key=result.output), Enc2File)
         self.assertEqual(result.exit_code, 0)
 
     def test_encrypt(self):
