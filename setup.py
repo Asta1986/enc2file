@@ -9,7 +9,7 @@ setup(name='enc2file',
       author_email='psljp@protonmail.com',
       license='GPL-3',
       packages=find_packages(),
-      install_requires=['cryptography==2.1.4', 'click==6.7'],
+      install_requires=['cryptography==2.3.1', 'click==6.7'],
       test_suite='nose.collector',
       tests_require=['nose'],
       entry_points='''
