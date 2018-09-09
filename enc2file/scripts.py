@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from enc2file import Enc2File
 import click
 
