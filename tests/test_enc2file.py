@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from os import makedirs
 from shutil import rmtree
 import enc2file
